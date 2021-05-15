@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/feedFragment">
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.azatberdimyradov.covid_19app.view.FeedFragment"
+        android:label="Global status"
+        tools:layout="@layout/fragment_feed" >
+        <action
+            android:id="@+id/action_feedFragment_to_countriesFragment"
+            app:destination="@id/countriesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/countriesFragment"
+        android:name="com.azatberdimyradov.covid_19app.view.CountriesFragment"
+        android:label="Countries"
+        tools:layout="@layout/fragment_countries">
+        <argument
+            android:name="commonModel"
+            app:argType="com.azatberdimyradov.covid_19app.model.CommonModel" />
+    </fragment>
+</navigation>
